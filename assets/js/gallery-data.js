@@ -1,0 +1,24 @@
+window.schoolGallery = {
+  photos: [
+    { src: 'public/media/images/facilities/school-entrance.webp', thumb: 'public/media/images/facilities/school-entrance-640.webp', title: 'The school entrance', category: 'Facilities', alt: 'Exterior and entrance of NOW Foundation School' },
+    { src: 'public/media/images/classrooms/pupils-making-paper-crafts.webp', thumb: 'public/media/images/classrooms/pupils-making-paper-crafts-640.webp', title: 'Paper craft together', category: 'Academics', alt: 'Three pupils making colourful paper crafts at a classroom table' },
+    { src: 'public/media/images/classrooms/pupil-making-paper-craft.webp', thumb: 'public/media/images/classrooms/pupil-making-paper-craft-640.webp', title: 'Creative learning', category: 'Academics', alt: 'A pupil working on a paper craft at a table' },
+    { src: 'public/media/images/students/pupils-playing-board-game.webp', thumb: 'public/media/images/students/pupils-playing-board-game-640.webp', title: 'Learning through play', category: 'Student Activities', alt: 'Two pupils playing a board game outdoors' },
+    { src: 'public/media/images/students/children-in-school-uniform.webp', thumb: 'public/media/images/students/children-in-school-uniform-640.webp', title: 'Pupils together', category: 'Student Activities', alt: 'Four young pupils wearing NOW Foundation School uniforms' },
+    { src: 'public/media/images/events/prize-giving-group.webp', thumb: 'public/media/images/events/prize-giving-group-640.webp', title: 'Prize-giving day', category: 'School Events', alt: 'Pupils and staff at the school prize-giving event' },
+    { src: 'public/media/images/events/prize-giving-activities.webp', thumb: 'public/media/images/events/prize-giving-activities-640.webp', title: 'On the prize-giving stage', category: 'School Events', alt: 'Children taking part in school prize-giving activities' },
+    { src: 'public/media/images/events/prize-giving-certificate.webp', thumb: 'public/media/images/events/prize-giving-certificate-640.webp', title: 'A moment of achievement', category: 'School Events', alt: 'Pupil receiving a certificate with two adults' },
+    { src: 'public/media/images/events/cultural-day-portrait.webp', thumb: 'public/media/images/events/cultural-day-portrait-640.webp', title: 'Cultural day portrait', category: 'Cultural Celebrations', alt: 'Pupil wearing traditional dress for cultural day' },
+    { src: 'public/media/images/events/cultural-day-costume.webp', thumb: 'public/media/images/events/cultural-day-costume-640.webp', title: 'Cultural day costume', category: 'Cultural Celebrations', alt: 'Pupil in costume before the cultural-day banner' }
+  ],
+  videos: [
+    { src: 'public/media/videos/school-events/prize-giving-stage.mp4', poster: 'public/media/images/gallery/prize-giving-stage.webp', title: 'Prize-giving stage', category: 'School Events', description: 'Pupils on stage during prize-giving day.', duration: '0:04' },
+    { src: 'public/media/videos/school-events/prize-giving-performance.mp4', poster: 'public/media/images/gallery/prize-giving-performance.webp', title: 'Prize-giving performance', category: 'School Events', description: 'A short moment from the prize-giving programme.', duration: '0:04' },
+    { src: 'public/media/videos/school-events/pupils-writing-at-prize-giving.mp4', poster: 'public/media/images/gallery/pupils-writing-at-prize-giving.webp', title: 'Pupils writing at prize-giving', category: 'School Events', description: 'Two pupils taking part in an activity on stage.', duration: '0:50' },
+    { src: 'public/media/videos/classrooms/classroom-presentation.mp4', poster: 'public/media/images/gallery/classroom-presentation.webp', title: 'Classroom presentation', category: 'Academics', description: 'A pupil presents an activity in class.', duration: '1:00' },
+    { src: 'public/media/videos/classrooms/practical-learning.mp4', poster: 'public/media/images/gallery/practical-learning.webp', title: 'Practical learning', category: 'Academics', description: 'Pupils working with classroom materials.', duration: '1:05' },
+    { src: 'public/media/videos/school-events/cultural-day-presentation.mp4', poster: 'public/media/images/gallery/cultural-day-presentation.webp', title: 'Cultural day presentation', category: 'Cultural Celebrations', description: 'A pupil takes part in the cultural-day programme.', duration: '1:00' },
+    { src: 'public/media/videos/student-activities/young-pupil-at-school.mp4', poster: 'public/media/images/gallery/young-pupil-at-school.webp', title: 'A young pupil at school', category: 'Student Activities', description: 'A short glimpse of a pupil during the school day.', duration: '0:16' },
+    { src: 'public/media/videos/student-activities/pupils-playing-board-game.mp4', poster: 'public/media/images/gallery/pupils-playing-board-game.webp', title: 'Board-game activity', category: 'Student Activities', description: 'Pupils playing a board game together.', duration: '0:45' }
+  ]
+};
