@@ -36,7 +36,8 @@ for name, original_name, generated_id, category in PHOTOS:
         copy2(generated, master)
     with Image.open(BACKUP / original_name) as original:
         original_long_edge = max(original.size)
-    with Image.open(master) as enhanced:
+    retouched = BACKUP / 'retouched-masters' / f'{name}.png'
+    with Image.open(retouched if retouched.exists() else master) as enhanced:
         image = ImageOps.exif_transpose(enhanced).convert('RGB')
         if max(image.size) > original_long_edge:
             image.thumbnail((original_long_edge, original_long_edge), Image.Resampling.LANCZOS)
