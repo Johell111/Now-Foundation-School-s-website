@@ -79,6 +79,15 @@ for path in (root / 'public/media/images').rglob('*.webp'):
     with Image.open(path) as image:
         image.verify()
 
+for name in ('proprietor-caleb', 'proprietress-eunice'):
+    portrait = root / 'public/media/images/leadership' / f'{name}.webp'
+    if not portrait.exists():
+        errors.append(f'Missing leadership portrait: {portrait}')
+    else:
+        with Image.open(portrait) as image:
+            if image.size != (760, 760):
+                errors.append(f'Leadership portrait dimension mismatch: {name}')
+
 source = Path(r'C:\Users\PC\Downloads\WhatsApp Unknown 2026-09-30 at 5.32.18 PM')
 backup = root / 'media-originals'
 for original in source.glob('*.jpeg'):

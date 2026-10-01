@@ -1,4 +1,4 @@
-# NOW Foundation School website
+# Now Foundation School website
 
 A complete static multi-page school website built for Creche, Nursery and Primary education.
 

@@ -34,9 +34,9 @@ for filename, name, start, length, frame_time in VIDEOS:
     output = STAGED / f'{name}.mp4'
     command = [
         FFMPEG, '-y', '-hide_banner', '-loglevel', 'error', '-ss', str(start), '-i', str(archived),
-        '-t', str(length), '-vf', 'hqdn3d=1.2:1.2:5:5,eq=brightness=0.012:contrast=1.025:saturation=1.025',
+        '-t', str(length), '-vf', 'hqdn3d=1.0:1.0:4:4,eq=brightness=0.012:contrast=1.03:saturation=1.025,unsharp=5:5:0.32:5:5:0',
         '-map', '0:v:0', '-map', '0:a:0?', '-c:v', 'libx264', '-preset', 'medium', '-crf', '22', '-pix_fmt', 'yuv420p',
-        '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', str(output)
+        '-af', 'loudnorm=I=-16:TP=-1.5:LRA=11', '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', str(output)
     ]
     subprocess.run(command, check=True)
     poster = THUMBS / f'{name}.webp'

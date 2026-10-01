@@ -1,13 +1,29 @@
 const button = document.querySelector('[data-menu-button]');
 const nav = document.querySelector('[data-main-nav]');
 
+const cookieKey = 'now-foundation-cookie-consent';
+let cookieAccepted = false;
+try { cookieAccepted = Boolean(localStorage.getItem(cookieKey)); } catch {}
+if (!cookieAccepted) {
+  const banner = document.createElement('aside');
+  banner.className = 'cookie-consent';
+  banner.setAttribute('role', 'dialog');
+  banner.setAttribute('aria-label', 'Cookie notice');
+  banner.innerHTML = '<div><strong>Cookie notice</strong><p>We use cookies to remember your preferences.</p></div><button type="button" class="button button-dark" data-cookie-accept>Accept</button>';
+  document.body.appendChild(banner);
+  banner.querySelector('[data-cookie-accept]').addEventListener('click', () => {
+    try { localStorage.setItem(cookieKey, 'accepted'); } catch {}
+    banner.remove();
+  });
+}
+
 const photo = (folder, name, width, height, alt) => ({
   type: 'image', src: `public/media/images/${folder}/${name}.webp`, width, height, alt
 });
 
 const schoolMedia = {
-  home_hero: photo('facilities', 'school-entrance', 1280, 720, 'Entrance to NOW Foundation School'),
-  creche_card: photo('students', 'children-in-school-uniform', 960, 1280, 'Young pupils wearing NOW Foundation School uniforms'),
+  home_hero: photo('facilities', 'school-entrance', 1280, 720, 'Entrance to Now Foundation School'),
+  creche_card: photo('students', 'children-in-school-uniform', 960, 1280, 'Young pupils wearing Now Foundation School uniforms'),
   nursery_card: photo('classrooms', 'pupils-making-paper-crafts', 1280, 640, 'Pupils making colourful paper crafts together'),
   primary_card: photo('students', 'pupils-playing-board-game', 1020, 768, 'Two pupils playing a board game'),
   home_day: photo('classrooms', 'pupil-making-paper-craft', 1198, 1281, 'Pupil working on a paper craft at a table'),
@@ -16,7 +32,7 @@ const schoolMedia = {
   home_gallery_3: photo('events', 'prize-giving-certificate', 720, 1280, 'Pupil receiving a certificate with two adults'),
   home_gallery_4: photo('events', 'prize-giving-activities', 1280, 720, 'Children taking part in prize-giving day activities'),
   home_gallery_5: photo('events', 'cultural-day-costume', 960, 1280, 'Pupil in costume at the school cultural day'),
-  about_hero: photo('facilities', 'school-entrance', 1280, 720, 'Exterior and entrance of NOW Foundation School'),
+  about_hero: photo('facilities', 'school-entrance', 1280, 720, 'Exterior and entrance of Now Foundation School'),
   about_environment: photo('classrooms', 'pupils-making-paper-crafts', 1280, 640, 'Pupils making crafts in a school classroom'),
   creche_hero: photo('students', 'children-in-school-uniform', 960, 1280, 'Young pupils together in school uniform'),
   nursery_hero: photo('classrooms', 'pupils-making-paper-crafts', 1280, 640, 'Young pupils making paper crafts'),
@@ -29,8 +45,8 @@ const schoolMedia = {
   student_gallery_3: photo('events', 'cultural-day-portrait', 960, 1280, 'Pupil dressed for cultural day'),
   student_gallery_4: photo('students', 'pupils-playing-board-game', 1020, 768, 'Two pupils playing a board game together'),
   student_gallery_5: photo('events', 'cultural-day-costume', 960, 1280, 'Pupil in costume before the cultural-day banner'),
-  admissions_hero: photo('facilities', 'school-entrance', 1280, 720, 'Entrance of NOW Foundation School'),
-  contact_hero: photo('facilities', 'school-entrance', 1280, 720, 'Front entrance of NOW Foundation School')
+  admissions_hero: photo('facilities', 'school-entrance', 1280, 720, 'Entrance of Now Foundation School'),
+  contact_hero: photo('facilities', 'school-entrance', 1280, 720, 'Front entrance of Now Foundation School')
 };
 
 document.querySelectorAll('[data-media-key]').forEach(slot => {
@@ -134,8 +150,8 @@ document.querySelectorAll('form[data-formspree]').forEach(form => {
 const floatingActions = document.createElement('div');
 floatingActions.className = 'floating-actions';
 floatingActions.innerHTML = `
-  <a class="float-button whatsapp" href="https://wa.me/2348090903335" target="_blank" rel="noopener" aria-label="Chat with NOW Foundation School on WhatsApp">WhatsApp</a>
-  <a class="float-button" href="tel:+2348090903335" aria-label="Call NOW Foundation School">Call</a>
+  <a class="float-button whatsapp" href="https://wa.me/2348090903335" target="_blank" rel="noopener" aria-label="Chat with Now Foundation School on WhatsApp">WhatsApp</a>
+  <a class="float-button" href="tel:+2348090903335" aria-label="Call Now Foundation School">Call</a>
   <button class="float-button top" type="button" aria-label="Back to top">↑</button>
 `;
 document.body.appendChild(floatingActions);
